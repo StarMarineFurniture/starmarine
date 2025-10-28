@@ -244,7 +244,7 @@ export default function ContactUs() {
                 onFilesChange={setSelectedFiles}
                 selectedFiles={selectedFiles}
                 maxFiles={5}
-                maxSizePerFile={10}
+                maxSizePerFile={5}
                 acceptedFileTypes={[".pdf", ".doc", ".docx", ".xls", ".xlsx", ".jpg", ".jpeg", ".png"]}
               />
 
