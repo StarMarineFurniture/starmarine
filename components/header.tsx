@@ -7,7 +7,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Left side - Company tagline */}
           <div className="shrink-0">
-            <h1 className="text-white font-medium text-sm sm:text-base">
+            <h1 className="text-white font-medium text-xs sm:text-base">
               Your Trusted OEM & ODM Furniture Partner
             </h1>
           </div>
@@ -17,7 +17,7 @@ export default function Header() {
             <Button 
               variant="default" 
               size="sm"
-              className="hover:cursor-pointer rounded-full"
+              className="hover:cursor-pointer rounded-full text-xs"
             >
               Contact Us
             </Button>
