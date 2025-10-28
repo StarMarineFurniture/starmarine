@@ -15,11 +15,11 @@ export default function Header() {
           {/* Right side - Contact button */}
           <div className="shrink-0">
             <Button 
-              variant="outline" 
+              variant="default" 
               size="sm"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white hover:cursor-pointer rounded-full"
+              className="hover:cursor-pointer rounded-full"
             >
-              Contact Us
+              Inquire Us for a Quote
             </Button>
           </div>
         </div>
