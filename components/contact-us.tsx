@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { FileUpload } from "@/components/ui/file-upload";
 
 // Icons
 const EmailIcon = () => (
@@ -34,6 +35,7 @@ export default function ContactUs() {
     message: ""
   });
 
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -51,12 +53,22 @@ export default function ContactUs() {
     setSubmitStatus('idle');
 
     try {
+      const formDataToSend = new FormData();
+      
+      // Add form fields
+      formDataToSend.append('fullName', formData.fullName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('message', formData.message);
+      
+      // Add files
+      selectedFiles.forEach((file, index) => {
+        formDataToSend.append(`file${index}`, file);
+      });
+
       const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
 
       if (response.ok) {
@@ -67,6 +79,10 @@ export default function ContactUs() {
           company: "",
           message: ""
         });
+        setSelectedFiles([]);
+        // Reset file input
+        const fileInput = document.getElementById('file-upload-input') as HTMLInputElement;
+        if (fileInput) fileInput.value = '';
       } else {
         setSubmitStatus('error');
       }
@@ -222,6 +238,15 @@ export default function ContactUs() {
                   placeholder="Tell us about your project or requirements..."
                 />
               </div>
+
+              {/* File Upload */}
+              <FileUpload
+                onFilesChange={setSelectedFiles}
+                selectedFiles={selectedFiles}
+                maxFiles={5}
+                maxSizePerFile={10}
+                acceptedFileTypes={[".pdf", ".doc", ".docx", ".xls", ".xlsx", ".jpg", ".jpeg", ".png"]}
+              />
 
               {/* Submit Button */}
               <Button

@@ -3,7 +3,12 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
-    const { fullName, email, company, message } = await request.json();
+    const formData = await request.formData();
+    
+    const fullName = formData.get('fullName') as string;
+    const email = formData.get('email') as string;
+    const company = formData.get('company') as string;
+    const message = formData.get('message') as string;
 
     // Validate required fields
     if (!fullName || !email || !message) {
@@ -13,11 +18,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter (you'll need to configure this with your email service)
+    // Get files
+    const files: File[] = [];
+    const fileEntries = Array.from(formData.entries()).filter(([key]) => key.startsWith('file'));
+    
+    for (const [, file] of fileEntries) {
+      if (file instanceof File && file.size > 0) {
+        files.push(file);
+      }
+    }
+
+    // Create transporter
     const transporter = nodemailer.createTransport({
-      // host: process.env.SMTP_HOST, // e.g., 'smtp.gmail.com'
-      // port: parseInt(process.env.SMTP_PORT || '587'),
-      // secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
@@ -27,6 +39,18 @@ export async function POST(request: NextRequest) {
          pass: process.env.SMTP_PASS,
       },
     });
+
+    // Prepare attachments for nodemailer
+    const attachments = await Promise.all(
+      files.map(async (file) => {
+        const buffer = Buffer.from(await file.arrayBuffer());
+        return {
+          filename: file.name,
+          content: buffer,
+          contentType: file.type,
+        };
+      })
+    );
 
     // Email to your company
     const companyEmailOptions = {
@@ -40,7 +64,9 @@ export async function POST(request: NextRequest) {
         <p><strong>Company:</strong> ${company || 'Not provided'}</p>
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
+        ${files.length > 0 ? `<p><strong>Attachments:</strong> ${files.length} file(s)</p>` : ''}
       `,
+      attachments,
     };
 
     // Auto-reply email to the customer
@@ -54,6 +80,7 @@ export async function POST(request: NextRequest) {
         <p>Thank you for reaching out to Star Marine Furniture. We have received your message and will get back to you within 24 hours.</p>
         <p><strong>Your message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
+        ${files.length > 0 ? `<p>We have also received your ${files.length} attached file(s).</p>` : ''}
         <br>
         <p>Best regards,</p>
         <p>Star Marine Furniture Team</p>
@@ -64,7 +91,7 @@ export async function POST(request: NextRequest) {
 
     // Send both emails
     await transporter.sendMail(companyEmailOptions);
-   //  await transporter.sendMail(customerEmailOptions);
+    await transporter.sendMail(customerEmailOptions);
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
