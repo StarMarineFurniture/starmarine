@@ -11,10 +11,8 @@ import {
 const navigationItems = [
    "Home",
    "About us",
-   "Our Solutions", 
    "Why Us",
    "Facility",
-   "Meet Our Team",
    "Our Products",
    "Our Process",
    "Contact Us"
