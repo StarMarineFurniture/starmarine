@@ -19,7 +19,7 @@ export default function Header() {
               size="sm"
               className="hover:cursor-pointer rounded-full"
             >
-              Inquire Us for a Quote
+              Contact Us
             </Button>
           </div>
         </div>
