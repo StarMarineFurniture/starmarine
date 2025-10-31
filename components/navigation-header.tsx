@@ -34,11 +34,16 @@ export default function NavigationHeader() {
   return (
     <nav className="bg-background border-b border-border sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Left side - Logo space */}
           <div className="shrink-0">
-            <div className="w-32 h-8 bg-muted rounded flex items-center justify-center text-sm text-muted-foreground">
-              Logo
+            <div className="flex items-center">
+              <img 
+                src="/logos/logo.png" 
+                alt="Star Marine Furniture Logo" 
+                className="h-10 w-auto object-contain hover:opacity-80 transition-opacity duration-200 cursor-pointer" 
+                onClick={() => handleNavClick("Home")}
+              />
             </div>
           </div>
 
