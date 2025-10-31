@@ -17,7 +17,7 @@ export default function Header() {
             <Button 
               variant="default" 
               size="sm"
-              className="hover:cursor-pointer rounded-full text-xs"
+              className="hover:cursor-pointer rounded-full text-xs sm:text-base"
             >
               Contact Us
             </Button>

@@ -252,7 +252,7 @@ export default function ContactUs() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full"
+                className="w-full hover:cursor-pointer"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
