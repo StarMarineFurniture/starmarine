@@ -102,7 +102,7 @@ export default function ContactUs() {
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Get a Quotation or Schedule a Factory Visit
           </h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground mx-auto lg:text-lg">
             Reach out to discuss your product needs, request a detailed quotation, or arrange a factory visit to see our production in action.
           </p>
         </div>

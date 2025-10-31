@@ -38,10 +38,10 @@ const Logos8 = ({
 }: Logos8Props) => {
   return (
     <section className="py-20">
-      <div className="container">
-        <div className="flex flex-col items-center text-center">
+      <div className="ax-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center text-center ">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">{title}</h2>
-          <p className="text-muted-foreground mt-1">{subtitle}</p>
+          <p className="text-muted-foreground mt-1 lg:text-lg">{subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-6 lg:gap-12">
             {logos.map((logo, index) => (
               <img
