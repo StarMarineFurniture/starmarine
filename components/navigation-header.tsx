@@ -55,7 +55,7 @@ export default function NavigationHeader() {
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className="text-foreground hover:text-primary hover:cursor-pointer transition-colors duration-200 text-sm font-medium"
+                className="text-foreground hover:text-primary hover:cursor-pointer transition-colors duration-200 text-xs lg:text-base font-medium"
               >
                 {item}
               </button>

@@ -101,10 +101,10 @@ export function FileUpload({
 
   return (
     <div className={className}>
-      <label htmlFor="file-upload-input" className="block text-sm font-medium text-foreground mb-2">
+      <label htmlFor="file-upload-input" className="block text-sm lg:text-base font-medium text-foreground mb-2">
         Attachments
       </label>
-      <p className="text-xs text-muted-foreground mb-3">
+      <p className="text-xs lg:text-sm text-muted-foreground mb-3">
         Upload up to {maxFiles} files (max {maxSizePerFile}MB each). Accepted formats: {formatFileTypes()}
       </p>
       
@@ -121,7 +121,7 @@ export function FileUpload({
         <Button
           type="button"
           variant="outline"
-          className="w-full h-12 border-2 border-dashed border-border hover:border-primary hover:bg-primary/5 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-in-out transform"
+          className="w-full h-12 border-2 border-dashed border-border hover:border-primary hover:bg-primary/5 hover:scale-[1.02] hover:shadow-md transition-all duration-300 ease-in-out transform text-sm lg:text-base justify-center flex items-center"
         >
           <svg className="w-5 h-5 mr-2 transition-transform duration-300 ease-in-out group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -134,7 +134,7 @@ export function FileUpload({
       {selectedFiles.length > 0 && (
         <div className="mt-4 space-y-3">
           <div className="flex items-center justify-between">
-            <p className="text-sm font-medium text-foreground">
+            <p className="text-sm lg:text-base font-medium text-foreground">
               Selected files ({selectedFiles.length}/{maxFiles})
             </p>
             <button

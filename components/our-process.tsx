@@ -88,7 +88,7 @@ const OurProcess = () => {
                            <h3 className="mb-2 text-lg font-medium">
                               {process.title}
                            </h3>
-                           <p className="text-muted-foreground text-sm">
+                           <p className="text-muted-foreground text-base ">
                               {process.description}
                            </p>
                         </Card>
@@ -112,7 +112,7 @@ const OurProcess = () => {
                            <h3 className="mb-2 text-lg font-medium">
                               {process.title}
                            </h3>
-                           <p className="text-muted-foreground text-sm">
+                           <p className="text-muted-foreground text-base">
                               {process.description}
                            </p>
                         </Card>

@@ -151,7 +151,7 @@ export default function ContactUs() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Full Name */}
               <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="fullName" className="block text-sm lg:text-base font-medium text-foreground mb-2">
                   Full Name *
                 </label>
                 <input
@@ -168,7 +168,7 @@ export default function ContactUs() {
 
               {/* Email Address */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="email" className="block text-sm lg:text-base font-medium text-foreground mb-2">
                   Email Address *
                 </label>
                 <input
@@ -185,7 +185,7 @@ export default function ContactUs() {
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="company" className="block text-sm lg:text-base font-medium text-foreground mb-2">
                   Company
                 </label>
                 <input
@@ -201,7 +201,7 @@ export default function ContactUs() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="message" className="block text-sm lg:text-base font-medium text-foreground mb-2">
                   Message *
                 </label>
                 <textarea
@@ -229,7 +229,7 @@ export default function ContactUs() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full hover:cursor-pointer"
+                className="w-full hover:cursor-pointer text-sm lg:text-base"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
