@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigation } from "@/hooks/use-navigation";
 
 const navigationItems = [
    "Home",
@@ -26,9 +27,10 @@ const MenuIcon = () => (
 );
 
 export default function NavigationHeader() {
+  const { navigateToSection } = useNavigation();
+
   const handleNavClick = (item: string) => {
-    // TODO: Implement scrolling to section
-    console.log(`Navigate to: ${item}`);
+    navigateToSection(item);
   };
 
   return (

@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
       <NavigationHeader />
       {/* Main content area with top padding to account for both headers */}
-      <main className="pt-4">
+      <main className="pt-4" id="home">
         {/* Your main content will go here */}
         <AboutUs />
         <Logos8 />

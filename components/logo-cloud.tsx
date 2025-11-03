@@ -37,7 +37,7 @@ const Logos8 = ({
   ],
 }: Logos8Props) => {
   return (
-    <section className="py-10 lg:py-20">
+    <section className="py-10 lg:py-20" id="our-clients">
       <div className="ax-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center ">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">{title}</h2>

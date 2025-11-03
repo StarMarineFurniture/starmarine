@@ -1,6 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { useNavigation } from "@/hooks/use-navigation";
 
 export default function Header() {
+  const { navigateToContact } = useNavigation();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-foreground border-b border-white/10 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,6 +22,7 @@ export default function Header() {
             <Button 
               variant="default" 
               size="sm"
+              onClick={navigateToContact}
               className="hover:cursor-pointer rounded-full text-xs sm:text-base"
             >
               Contact Us
