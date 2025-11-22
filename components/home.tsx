@@ -74,7 +74,7 @@ const Home = () => {
                 <div className="p-0">
                   <div
                     key={index}
-                    className="h-[75vh] bg-muted relative flex flex-col items-center justify-center p-4 sm:p-8"
+                    className="h-[75vh] bg-muted relative flex flex-col items-center justify-center"
                   >
                     <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
                       <img
