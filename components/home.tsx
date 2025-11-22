@@ -44,7 +44,7 @@ const Home = () => {
   }, [api]);
 
   return (
-    <section className="w-screen px-0" id="home">
+    <section className="w-full px-0 -mx-4 sm:mx-0 sm:w-auto" id="home">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
