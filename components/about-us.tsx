@@ -1,66 +1,56 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <section className="py-10 lg:py-20" id="about-us">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-12">
-          <p className="col-span-2 font-bold ">About Us</p>
+    <section className="relative py-20 lg:py-32 overflow-hidden h-screen" id="about-us">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="/DJI Photo 0515.jpg"
+          alt="Star Marine Furniture Factory"
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        {/* Additional shadow gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20"></div>
+      </div>
 
-          <div className="col-span-4 ml-auto max-w-4xl space-y-6 lg:pl-8">
-            <h1 className="text-2xl font-medium tracking-tight">
-              Established in 2009, Star Marine Furniture is a Vietnamese OEM and ODM manufacturer specializing in high-quality home furniture for living, dining, and bedroom spaces. 
-            </h1>
-            <p className="text-foreground/40 w-fit text-lg">
-              Operating from a 7,000m² facility in Ho Chi Minh City with a dedicated team of around 100 professionals, we combine woodworking expertise with advanced CNC technology to deliver products that meet global standards of precision, comfort, and durability.
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            About Star Marine Furniture
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto"></div>
+        </motion.div>
 
+        <div className="max-w-sm sm:max-w-md lg:max-w-2xl mx-auto text-center px-4 sm:px-0">
+          {/* Content Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <p className="text-white text-lg lg:text-xl leading-relaxed font-light text-justify">
+              Established in 2009, Star Marine Furniture is a Vietnamese OEM and ODM manufacturer specializing in high-quality home furniture for living, dining, and bedroom spaces. Operating from a 7,000m² facility in Ho Chi Minh City with a dedicated team of around 100 professionals, we combine woodworking expertise with advanced CNC technology to deliver products that meet global standards of precision, comfort, and durability.
             </p>
-          </div>
-        </div>
-        
-        {/* First image - visible only on mobile */}
-        <div className="my-8 lg:hidden">
-          <img
-            src="/Desk.png"
-            alt=""
-            className="h-100 w-full object-cover"
-          />
-        </div>
-        
-        {/* Both images - visible only on desktop */}
-        <div className="my-16 hidden lg:grid grid-cols-2 items-center gap-4">
-          <img
-            src="/Desk.png"
-            alt=""
-            className="h-150 w-full object-cover"
-          />
-          <img
-            src="/SideTable.png"
-            alt=""
-            className="h-150 w-full object-cover saturate-0"
-          />
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-7 gap-8 lg:gap-12">
-          <p className="col-span-2 font-bold">Our Specialty</p>
-
-          <div className="col-span-4 ml-auto max-w-4xl space-y-6 lg:pl-8">
-            <h1 className="text-2xl font-medium tracking-tight">
+            
+            <p className="text-white/90 text-lg lg:text-xl leading-relaxed font-light text-justify">
               As a medium-sized manufacturer, we take pride in our flexibility, attention to detail, and commitment to long-term partnerships. With expertise in oak, plywood, MDF, metal, shagreen, glass, and stone finishes, we provide smart material solutions that meet diverse design goals and budget requirements.
-            </h1>
-            <p className="text-foreground/40 w-fit text-lg">
-              Trusted by distributors and retailers across Australia, Europe, and the United States, Star Marine Furniture continues to grow as a reliable manufacturing partner recognized for consistency, quality, and integrity in every collaboration.
             </p>
-          </div>
-        </div>
-        
-        {/* Second image - visible only on mobile */}
-        <div className="my-8 lg:hidden">
-          <img
-            src="/SideTable.png"
-            alt=""
-            className="h-100 w-full object-cover saturate-0"
-          />
+          </motion.div>
         </div>
       </div>
     </section>
