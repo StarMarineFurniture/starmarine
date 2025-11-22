@@ -47,7 +47,7 @@ const Home = () => {
   }, [api]);
 
   return (
-    <section className="pb-10 lg:pb-20 w-screen sm:ml-0 sm:w-auto px-0" id="home">
+    <section className="pb-10 lg:pb-20 w-screen px-0" id="home">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -71,13 +71,13 @@ const Home = () => {
             }),
           ]}
         >
-          <CarouselContent className="flex w-full ml-0 sm:-ml-4">
+          <CarouselContent className="flex w-full ml-0">
             {Images.map((img, index) => (
-              <CarouselItem key={index} className="w-full basis-full sm:basis-[91%] pl-0 sm:pl-4">
-                <div className="p-0 sm:p-1">
+              <CarouselItem key={index} className="w-full basis-full pl-0">
+                <div className="p-0">
                   <div
                     key={index}
-                    className="h-166 bg-muted relative flex flex-col items-end justify-between p-4 sm:p-8"
+                    className="h-166 bg-muted relative flex flex-col items-center justify-between p-4 sm:p-8"
                   >
                     <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
                       <img
@@ -87,10 +87,10 @@ const Home = () => {
                       />
                     </div>
                     <div className="mt-36 z-10 text-white">
-                      <h1 className="text-right text-6xl font-medium tracking-tight">
+                      <h1 className="text-center text-6xl font-medium tracking-tight">
                         {img.title}
                       </h1>
-                      <p className="my-6 max-w-lg text-right text-lg">
+                      <p className="my-6 max-w-lg text-center text-lg">
                         {img.description}
                       </p>
                     </div>
