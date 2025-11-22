@@ -14,7 +14,7 @@ const AboutUs = () => {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
         {/* Additional shadow gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-black/20"></div>
       </div>
