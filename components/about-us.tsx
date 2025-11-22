@@ -28,7 +28,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             About us
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
