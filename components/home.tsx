@@ -22,19 +22,16 @@ const Home = () => {
       image: "Website Header Image.png",
       title: "Star Marine Furniture",
       description: "Shaping Perfection. Delivering Comfort.",
-      link: "#",
     },
     {
       image: "Website Header Image (1).png",
       title: "Star Marine Furniture",
-      description: "IShaping Perfection. Delivering Comfort.",
-      link: "#",
+      description: "Shaping Perfection. Delivering Comfort.", 
     },
     {
       image: "Website Header Image (2).png",
       title: "Star Marine Furniture",
       description: "Shaping Perfection. Delivering Comfort.",
-      link: "#",
     },
   ];
 
@@ -47,7 +44,7 @@ const Home = () => {
   }, [api]);
 
   return (
-    <section className="pb-10 lg:pb-20 w-screen px-0" id="home">
+    <section className="w-screen px-0" id="home">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -77,7 +74,7 @@ const Home = () => {
                 <div className="p-0">
                   <div
                     key={index}
-                    className="h-166 bg-muted relative flex flex-col items-center justify-between p-4 sm:p-8"
+                    className="h-[75vh] bg-muted relative flex flex-col items-center justify-center p-4 sm:p-8"
                   >
                     <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
                       <img
@@ -86,46 +83,19 @@ const Home = () => {
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <div className="mt-36 z-10 text-white">
+                    <div className="z-10 text-white text-center">
                       <h1 className="text-center text-6xl font-medium tracking-tight">
                         {img.title}
                       </h1>
-                      <p className="my-6 max-w-lg text-center text-lg">
+                      <p className="my-6 max-w-lg text-center text-lg mx-auto">
                         {img.description}
                       </p>
-                    </div>
-                    <div className="bg-muted00 z-10 flex w-full justify-between">
-                      <a href={img.link}>
-                        <Button
-                          variant="outline"
-                          className="text-md group flex w-fit items-center justify-center gap-2 rounded-full px-4 py-1 tracking-tight"
-                        >
-                          Try it for free
-                          <ArrowRight className="size-4 -rotate-45 transition-all ease-out group-hover:ml-3 group-hover:rotate-0" />
-                        </Button>
-                      </a>
                     </div>
                   </div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-
-          {/* Navigation Dots */}
-          <div className="mt-4 justify-center gap-2 hidden sm:flex">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`h-2.5 w-2.5 rounded-full transition-all ${
-                  current === index
-                    ? "bg-primary w-4"
-                    : "bg-muted-foreground/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </Carousel>
       </motion.div>
     </section>
