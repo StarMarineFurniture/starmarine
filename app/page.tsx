@@ -6,6 +6,7 @@ import { Logos8 } from "@/components/logo-cloud";
 import { OurProcess } from "@/components/our-process";
 import { AboutUs } from "@/components/about-us";
 import { Home } from "@/components/home";
+import { WhyUs } from "@/components/why-us";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <main className="pt-4">
         <Home />
         <AboutUs />
+        <WhyUs />
         <Logos8 />
         <OurProcess />
         <ContactUs />
