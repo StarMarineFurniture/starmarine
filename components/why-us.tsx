@@ -76,7 +76,7 @@ const WhyUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Why Choose Star Marine Furniture?
+            Why choose us
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Discover what sets us apart in the furniture manufacturing industry

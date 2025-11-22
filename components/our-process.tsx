@@ -74,7 +74,7 @@ const OurProcess = () => {
             </p>
             <div className="mt-8 w-full">
                {/* Mobile: Horizontal scroll */}
-               <div className="md:hidden overflow-x-auto pb-4">
+               <div className="md:hidden overflow-x-auto pb-4 scrollbar-hide">
                   <ul className="flex gap-5 w-max pt-4 px-4">
                      {processSteps.map((process, i) => (
                         <li key={i} className="shrink-0 w-72">

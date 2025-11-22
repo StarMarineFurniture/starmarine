@@ -29,7 +29,7 @@ const AboutUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            About Star Marine Furniture
+            About us
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
