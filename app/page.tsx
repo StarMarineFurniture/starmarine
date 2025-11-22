@@ -5,15 +5,16 @@ import ContactUs from "@/components/contact-us";
 import { Logos8 } from "@/components/logo-cloud";
 import { OurProcess } from "@/components/our-process";
 import { AboutUs } from "@/components/about-us";
+import { Home } from "@/components/home";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <NavigationHeader />
       {/* Main content area with top padding to account for both headers */}
-      <main className="pt-4" id="home">
-        {/* Your main content will go here */}
+      <main className="pt-4">
+        <Home />
         <AboutUs />
         <Logos8 />
         <OurProcess />
