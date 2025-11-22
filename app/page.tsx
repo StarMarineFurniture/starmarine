@@ -7,6 +7,7 @@ import { OurProcess } from "@/components/our-process";
 import { AboutUs } from "@/components/about-us";
 import { Home } from "@/components/home";
 import { WhyUs } from "@/components/why-us";
+import { Facility } from "@/components/facility";
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
         <Home />
         <AboutUs />
         <WhyUs />
+        <Facility />
         <Logos8 />
         <OurProcess />
         <ContactUs />
