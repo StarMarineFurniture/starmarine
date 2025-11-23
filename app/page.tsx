@@ -8,6 +8,7 @@ import { AboutUs } from "@/components/about-us";
 import { Home } from "@/components/home";
 import { WhyUs } from "@/components/why-us";
 import { Facility } from "@/components/facility";
+import { ProductsGallery } from "@/components/products-gallery";
 
 export default function Page() {
   return (
@@ -21,6 +22,7 @@ export default function Page() {
         <WhyUs />
         <Facility />
         <Logos8 />
+        <ProductsGallery />
         <OurProcess />
         <ContactUs />
       </main>
