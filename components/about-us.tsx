@@ -43,11 +43,11 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <p className="text-white text-lg lg:text-xl leading-relaxed font-light text-justify">
+            <p className="text-white text-lg lg:text-xl leading-relaxed text-justify">
               Established in 2009, Star Marine Furniture is a Vietnamese OEM and ODM manufacturer specializing in high-quality home furniture for living, dining, and bedroom spaces. Operating from a 7,000m² facility in Ho Chi Minh City with a dedicated team of around 100 professionals, we combine woodworking expertise with advanced CNC technology to deliver products that meet global standards of precision, comfort, and durability.
             </p>
             
-            <p className="text-white/90 text-lg lg:text-xl leading-relaxed font-light text-justify">
+            <p className="text-white/90 text-lg lg:text-xl leading-relaxed text-justify">
               As a medium-sized manufacturer, we take pride in our flexibility, attention to detail, and commitment to long-term partnerships. With expertise in oak, plywood, MDF, metal, shagreen, glass, and stone finishes, we provide smart material solutions that meet diverse design goals and budget requirements.
             </p>
           </motion.div>
