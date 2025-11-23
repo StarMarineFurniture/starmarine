@@ -2,10 +2,7 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import React, { useEffect, useState } from "react";
-
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   type CarouselApi,
@@ -27,12 +24,7 @@ const Home = () => {
       image: "Website Header Image (1).png",
       title: "Star Marine Furniture",
       description: "Shaping Perfection. Delivering Comfort.", 
-    },
-    {
-      image: "Website Header Image (2).png",
-      title: "Star Marine Furniture",
-      description: "Shaping Perfection. Delivering Comfort.",
-    },
+    }
   ];
 
   useEffect(() => {
@@ -74,7 +66,7 @@ const Home = () => {
                 <div className="p-0">
                   <div
                     key={index}
-                    className="h-[75vh] bg-muted relative flex flex-col items-center justify-center"
+                    className="h-screen bg-muted relative flex flex-col items-center justify-center"
                   >
                     <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
                       <img
@@ -82,6 +74,10 @@ const Home = () => {
                         alt=""
                         className="h-full w-full object-cover"
                       />
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-black/20"></div>
+                      {/* Additional gradient overlay */}
+                      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/20 to-black/10"></div>
                     </div>
                     <div className="z-10 text-white text-center">
                       <h1 className="text-center text-6xl font-medium tracking-tight">
