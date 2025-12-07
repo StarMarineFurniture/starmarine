@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
     // Email to your company
     const companyEmailOptions = {
       from: process.env.SMTP_USER,
-      to: 'lamduynhatle@gmail.com', // Your company email
+      to: 'faye.le@starmarine.com.vn', // Your company email
       subject: `New Contact Form Submission from ${fullName}`,
       html: `
         <h2>New Contact Form Submission</h2>
