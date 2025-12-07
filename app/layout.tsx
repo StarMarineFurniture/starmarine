@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "StarMarine Furniture",
-  description: "Beautiful furniture with shadcn/ui yellow theme",
+  description: "High-Quality Custom Furniture Solutions",
 };
 
 export default function RootLayout({
