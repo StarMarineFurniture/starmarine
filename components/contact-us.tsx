@@ -43,12 +43,26 @@ export default function ContactUs() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    
+    // Show success message immediately
+    setSubmitStatus('success');
+    
+    // Reset form immediately
+    setFormData({
+      fullName: "",
+      email: "",
+      company: "",
+      message: ""
+    });
+    setSelectedFiles([]);
+    // Reset file input
+    const fileInput = document.getElementById('file-upload-input') as HTMLInputElement;
+    if (fileInput) fileInput.value = '';
 
     try {
       const formDataToSend = new FormData();
       
-      // Add form fields
+      // Add form fields (using the original values before reset)
       formDataToSend.append('fullName', formData.fullName);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('company', formData.company);
@@ -59,29 +73,17 @@ export default function ContactUs() {
         formDataToSend.append(`file${index}`, file);
       });
 
+      // Send in background - user already sees success message
       const response = await fetch('/api/contact', {
         method: 'POST',
         body: formDataToSend,
       });
 
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          fullName: "",
-          email: "",
-          company: "",
-          message: ""
-        });
-        setSelectedFiles([]);
-        // Reset file input
-        const fileInput = document.getElementById('file-upload-input') as HTMLInputElement;
-        if (fileInput) fileInput.value = '';
-      } else {
-        setSubmitStatus('error');
+      if (!response.ok) {
+        console.error('Email sending failed, but user already saw success message');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitStatus('error');
+      console.error('Error sending email (background):', error);
     } finally {
       setIsSubmitting(false);
     }

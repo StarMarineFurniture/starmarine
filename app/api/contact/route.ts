@@ -30,9 +30,10 @@ export async function POST(request: NextRequest) {
 
     // Create transporter
     const transporter = nodemailer.createTransport({
-      host: 'starmarine.com.vn',
+      host: "smtp.gmail.com",
       port: 465,
       secure: true,
+      service: 'gmail',
       auth: {
          user: process.env.SMTP_USER,
          pass: process.env.SMTP_PASS,
@@ -83,8 +84,6 @@ export async function POST(request: NextRequest) {
         <br>
         <p>Best regards,</p>
         <p>Star Marine Furniture Team</p>
-        <p>Email: faye.le@starmarine.com.vn</p>
-        <p>Phone: +849 0669 4808</p>
       `,
     };
 
