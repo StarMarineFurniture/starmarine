@@ -143,9 +143,7 @@ const ProductsGallery = () => {
                   Featured Products
                 </h2>
                 <p className="text-lg text-gray-300 leading-relaxed mb-2">
-                  As you can see from our highlighted products, BMS strives for originality to help you make a 
-                  powerful impact on any target market. With our extensive experience as a reputable furniture 
-                  manufacturer and established craftsmanship, we help you satisfy your clients' strict requirements.
+                  With our extensive experience and established craftsmanship, we help you satisfy your clients' strict requirements.
                 </p>
               </motion.div>
 
