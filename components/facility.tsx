@@ -19,6 +19,14 @@ const Facility = () => {
     {
       src: "Cropped Image.jpg",
       alt: "Wood Processing Department"
+    },
+    {
+      src: 'Product Image (3).png',
+      alt: 'Machine Picture'
+    },
+    {
+      src: 'Product Image (4).png',
+      alt: 'Assembly Line'
     }
   ];
 
@@ -68,7 +76,7 @@ const Facility = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="md:grid md:grid-cols-2 md:gap-6 lg:gap-8"
+          className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-6 lg:gap-8"
         >
           {/* Mobile horizontal scroll */}
           <div className="flex overflow-x-auto gap-4 pb-4 md:hidden snap-x snap-mandatory scrollbar-hide">
