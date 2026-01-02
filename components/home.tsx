@@ -72,7 +72,7 @@ const Home = () => {
                       <img
                         src={img.image}
                         alt=""
-                        className="h-full w-ful object-cover"
+                        className="h-full w-full object-cover"
                       />
                       {/* Dark overlay for better text readability */}
                       <div className="absolute inset-0 bg-black/20"></div>
