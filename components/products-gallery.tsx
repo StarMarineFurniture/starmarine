@@ -246,8 +246,7 @@ const ProductsGallery = () => {
                   Featured Products
                 </h2>
                 <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                  As you can see from our highlighted products, BMS strives for originality to help you make a 
-                  powerful impact on any target market.
+                  With our extensive experience and established craftsmanship, we help you satisfy your clients' strict requirements.
                 </p>
               </motion.div>
 
